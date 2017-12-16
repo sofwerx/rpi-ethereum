@@ -11,6 +11,9 @@ services:
     deploy:
       mode: global
 
-  ethereum:
+  rpi-ethereum:
     build: .
     image: sofwerx/rpi-ethereum
+    volumes:
+      - ./outputs/:/outputs/
+    command: cp -r /usr/local/bin/ /outputs/ 
