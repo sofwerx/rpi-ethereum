@@ -1,0 +1,12 @@
+sudo: required
+services: docker
+language: bash
+branches:
+  only:
+  - master
+before_script:
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+script:
+- "./build.sh"
+after_success:
+- "./push.sh"
