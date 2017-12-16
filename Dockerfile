@@ -63,7 +63,7 @@ WORKDIR $GOPATH
 
 RUN cp -a /docker-golang/1.9/alpine3.6/go-wrapper /usr/local/bin/go-wrapper
 
-RUN apk add --no-cache make build-base
+RUN apk add --no-cache make build-base linux-headers
 
 RUN git clone https://github.com/ethereum/go-ethereum /go-ethereum
 WORKDIR /go-ethereum
