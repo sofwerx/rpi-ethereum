@@ -11,7 +11,7 @@
 ) &
 KEEPALIVE_PID=$!
 
-docker pull ${TRAVIS_REPO_SLUG}:latest
+docker pull ${TRAVIS_REPO_SLUG}:latest || true
 docker build \
   --cache-from ${TRAVIS_REPO_SLUG}:latest \
   --tag ${TRAVIS_REPO_SLUG}:${TRAVIS_BUILD_NUMBER} \
