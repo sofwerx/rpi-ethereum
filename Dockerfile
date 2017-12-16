@@ -70,7 +70,7 @@ WORKDIR /go-ethereum
 RUN make all
 
 # Pull all binaries into a second stage deploy alpine container
-FROM alpine:latest
+FROM multiarch/alpine:armhf-v3.6
 
 RUN apk add --no-cache ca-certificates
 COPY --from=builder /go-ethereum/build/bin/* /usr/local/bin/
